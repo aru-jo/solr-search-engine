@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COVID -19 CASES</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<h1><center>COVID - 19 CASES OVERVIEW</center></h1>
+		<table class = "table table-bordered table-dark">
+			<thead>
+				<tr> 
+					<th scope="col"> Country </th>
+					<th scope="col"> Confirmed </th>
+					<th scope="col"> Recovered </th>
+					<th scope="col"> Deaths </th>
+					<th scope="col"> Last Updated </th>
+				</tr>
+			</thead>
+			<tbody>	
+			{% for item in items %}
+				<tr>
+				<th scope="row"> {{ loop.index }} </th>
+				<td> <a href="{{ item[0] }}"> {{ item[1] }} <br>
+				<a href="{{ item[0] }}"> {{ item[0] }}</a> <br>
+				ID: {{ item[2] }} <br>
+				{{ item[3] }} </td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+</body>
+</html>
